@@ -1,0 +1,4 @@
+{
+  "*.{js,ts,vue}": ["npm run format", "npm run lint"],
+  "package.json": "npx sort-package-json"
+}
