@@ -1,14 +1,21 @@
 <script setup lang="ts">
-import { useCheckableTag } from '../composables/useCheckableTag'
-
-const { state, handleChange } = useCheckableTag()
+const props = defineProps<{
+  state: {
+    tags: string[]
+    selectedTags: string[]
+  }
+}>()
 </script>
 <template>
   <div class="flexibleRows">
-    <template v-for="tag in state.tags" :key="tag">
+    <template v-for="tag in props.state.tags" :key="tag">
       <a-checkable-tag
-        :checked="state.selectedTags.indexOf(tag) > -1"
-        @change="(checked) => handleChange(tag, checked)"
+        :checked="props.state.selectedTags.indexOf(tag) > -1"
+        @change="
+          (checked: boolean) => {
+            $emit('changeFunction', tag, checked)
+          }
+        "
       >
         {{ tag }}
       </a-checkable-tag>

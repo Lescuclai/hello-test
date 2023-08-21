@@ -5,7 +5,7 @@ const search = ref<string>('')
 <template>
   <a-input-search
     v-model:value="search"
-    style="padding: 2rem 5rem"
+    style="padding: 2rem 25rem"
     placeholder="Search"
     @search="$emit('searchFunction', search)"
   />

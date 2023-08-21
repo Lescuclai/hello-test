@@ -1,13 +1,24 @@
-import { ref } from 'vue'
-import data from '../data/associations.json'
+import { reactive } from 'vue'
+import api from '../services/api'
+import { type Association } from '../data/interfaces/association'
 
 export function useHome() {
-  const filteredAssociations = ref<[]>([])
+  const state = reactive({
+    tags: ['Environnement', 'Santé', 'Education', 'Développement local'],
+    selectedTags: [] as string[],
+    filteredAssociations: [] as Association[]
+  })
 
-  const onSearch = (searchValue<String>) => {
-    console.log('or use this.value', searchValue)
-    filteredAssociations.value = data.filter((datum) => datum.name.includes(searchValue))
-    console.log(filteredAssociations.value)
+  const handleChange = (tag: string, checked: boolean) => {
+    const nextSelectedTags = checked
+      ? [...state.selectedTags, tag]
+      : state.selectedTags.filter((t) => t !== tag)
+    state.selectedTags = nextSelectedTags
+    state.filteredAssociations = api.getAll('', state.selectedTags)
   }
-  return { onSearch, filteredAssociations }
+
+  const onSearch = (searchValue: string) => {
+    state.filteredAssociations = api.getAll(searchValue.toLowerCase(), [])
+  }
+  return { onSearch, state, handleChange }
 }

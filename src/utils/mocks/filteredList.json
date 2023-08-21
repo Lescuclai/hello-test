@@ -1,0 +1,47 @@
+[
+  {
+    "id": 4,
+    "name": "assoc4",
+    "description": "lorem ipsum assoc4",
+    "coordinates": { "long": -0.5745145082473755, "lat": 44.83394241333008 },
+    "category": "education",
+    "address": {
+      "number": 2,
+      "street": "bassin à flot",
+      "postcode": 33300,
+      "town": "Bordeaux",
+      "country": "France"
+    },
+    "phoneNumber": "0685217659"
+  },
+  {
+    "id": 1,
+    "name": "assoc1",
+    "description": "lorem ipsum assoc1",
+    "coordinates": { "long": -0.5805, "lat": 44.8404 },
+    "category": "environnement",
+    "address": {
+      "number": 2,
+      "street": "bassin à flot",
+      "postcode": 33300,
+      "town": "Bordeaux",
+      "country": "France"
+    },
+    "phoneNumber": "0685217659"
+  },
+  {
+    "id": 3,
+    "name": "assoc3",
+    "description": "lorem ipsum assoc3",
+    "coordinates": { "long": -0.5499503, "lat": 44.8514135 },
+    "category": "environnement",
+    "address": {
+      "number": 2,
+      "street": "bassin à flot",
+      "postcode": 33300,
+      "town": "Bordeaux",
+      "country": "France"
+    },
+    "phoneNumber": "0685217659"
+  }
+]
