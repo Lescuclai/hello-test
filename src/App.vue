@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import homeView from './views/home.vue'
 import { inject } from 'vue'
 
 const isLargeScreen = inject('isLargeScreen')
@@ -9,11 +8,11 @@ const isLargeScreen = inject('isLargeScreen')
   <a-page-header
     class="header"
     style="border: 1px solid rgb(235, 237, 240)"
-    title="Rechercher une association"
-    :avatar="{ src: 'https://avatars1.githubusercontent.com/u/8186664?s=460&v=4' }"
+    title="HelloRecherche"
   />
+
   <div :class="{ bigBody: isLargeScreen, smallBody: !isLargeScreen }">
-    <homeView />
+    <RouterView></RouterView>
   </div>
 </template>
 

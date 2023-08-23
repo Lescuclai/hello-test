@@ -3,7 +3,7 @@ import { useMediaQuery } from '@vueuse/core'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/index'
 import Antd from 'ant-design-vue'
 
 const isLargeScreen = useMediaQuery('(min-width:500px)')

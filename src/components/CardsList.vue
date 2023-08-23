@@ -19,6 +19,7 @@ defineProps<{
     :class="{ selected: selectedAssociation === association.id }"
     class="card"
   >
+    <template #extra> <routerLink :to="'/' + association.id">More</routerLink></template>
     <span class="category">{{ capitalizeFirstLetter(association.category) }}</span>
     <p v-if="isLargeScreen && association.description.length > 300">
       {{ association.description.substring(0, 300) }}<span>...</span>

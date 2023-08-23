@@ -4,7 +4,7 @@ import api from '../services/api'
 import filteredList from './mocks/filteredList.json'
 
 describe('utils', () => {
-  const str = 'Hello les amis'
+  const str = 'les catégories sont hétéroclites'
   const association = [
     {
       id: 4,
@@ -24,10 +24,7 @@ describe('utils', () => {
   ]
 
   it('should remove accents from string', () => {
-    expect(removeAccents(str).match('les categories sont heteroclites'))
-  })
-  it('should do nothing if there is no accent', () => {
-    expect(removeAccents(str).match(str))
+    expect(removeAccents(str)).toMatch('les categories sont heteroclites')
   })
   it('should filter the assocation list by selected filter in case insencitive', () => {
     expect(filterAssociationList('category', 'EdUcaTion')).toEqual(association)
@@ -42,6 +39,6 @@ describe('utils', () => {
     expect(api.getAll('assoc4', [])).toMatchObject(association)
   })
   it('should return an association by id', () => {
-    expect(api.getOnebyId(4)).toMatchObject(...association)
+    expect(api.getOnebyId(4)).toMatchObject(association[0])
   })
 })
