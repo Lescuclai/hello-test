@@ -1,4 +1,5 @@
 import { filterAssociationList } from '../utils'
+import data from '../data/associations.json'
 
 const api = {
   getAll: (searchValue: string, categories: string[]) => {
@@ -12,6 +13,9 @@ const api = {
 
       return associations.flat()
     }
+  },
+  getOnebyId: (id: number) => {
+    return data.find((association) => association.id === id)
   }
 }
 

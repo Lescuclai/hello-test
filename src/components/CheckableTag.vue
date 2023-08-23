@@ -10,6 +10,7 @@ const props = defineProps<{
   <div class="flexibleRows">
     <template v-for="tag in props.state.tags" :key="tag">
       <a-checkable-tag
+        :style="{ margin: 0 }"
         :checked="props.state.selectedTags.indexOf(tag) > -1"
         @change="
           (checked: boolean) => {
@@ -26,6 +27,7 @@ const props = defineProps<{
 <style scoped>
 .flexibleRows {
   display: flex;
+  gap: 5px;
   justify-content: center;
 }
 </style>
